@@ -1,7 +1,7 @@
 import './style.scss'
 
 const searchParams = new URLSearchParams(location.search)
-const color = searchParams.get('color') ?? '0'
+const color = searchParams.get('color')
 const duration = searchParams.get('duration') ?? '120'
 const size = searchParams.get('size') ?? '71'
 const root = document.querySelector<HTMLElement>(':root')!
@@ -52,20 +52,20 @@ class BackgroundController {
       color1,
       color2,
       color3
-    ] = this.getColors(Number(color))
+    ] = this.getColors(color)
     root.style.setProperty('--cell_color1', color1)
     root.style.setProperty('--cell_color2', color2)
     root.style.setProperty('--tree_color', color3)
   }
 
-  getColors(index?: number) {
+  getColors(index: string | null) {
     if (this.colors.length - 1 === this.currentIndex) {
       this.currentIndex = 0
     } else {
       this.currentIndex++
     }
 
-    return this.colors[index ?? this.currentIndex]
+    return this.colors[index ? Number(index) : this.currentIndex]
   }
 }
 
