@@ -30,7 +30,7 @@ body {
     var(--c3) calc(var(--size) / -10) var(--size),
     var(--c3) calc(9 * var(--size) / 10) calc(2 * var(--size)),
     repeating-conic-gradient(
-      from 45deg,
+      from 45deg at 50.01%,
       var(--cell_color1) 0 25%,
       var(--cell_color2) 0 50%
     );
