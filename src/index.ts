@@ -1,4 +1,7 @@
+import { snowConfig } from './snow.js'
 import './style.scss'
+
+window.snowConfig = snowConfig
 
 const searchParams = new URLSearchParams(location.search)
 const color = searchParams.get('color')
@@ -12,8 +15,8 @@ class BackgroundController {
   private readonly colors = [
     [
       '#a31e39', // cell 1
-      '#165B33', // cell 2
-      '#ffffff' // xmas tree
+      '#1B9450', // cell 2
+      '#fffff7' // xmas tree
 
     ],
     [
@@ -22,14 +25,14 @@ class BackgroundController {
       '#1B9450'
     ],
     [
-      '#1B9450',
-      '#a31e39',
-      '#ffffff'
-    ],
-    [
       '#17007c',
       '#fffff7',
       '#97cdff'
+    ],
+    [
+      '#1B9450',
+      '#a31e39',
+      '#fffff7'
     ],
     [
       '#F9BABA',
@@ -72,7 +75,10 @@ class BackgroundController {
 const backgroundController = new BackgroundController()
 backgroundController.changeBackgroundDuration(duration)
 backgroundController.changeBackgroundCellSize(size)
-backgroundController.changeBackgroundColors()
+
+if (color) {
+  backgroundController.changeBackgroundColors()
+}
 
 background.addEventListener('animationiteration', () => {
   backgroundController.changeBackgroundColors()

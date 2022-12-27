@@ -6,9 +6,9 @@ body {
 
 :root {
   --size: 71px;
-  --tree_color: #fff;
+  --tree_color: #fffff7;
   --cell_color1: #a31e39;
-  --cell_color2: #31570e;
+  --cell_color2: #1b9450;
   --duration: 120s;
   --conic_background: #0000, var(--tree_color) 1deg 79deg, #0000 81deg;
   --c0: conic-gradient(from 140deg at 50% 87.5%, var(--conic_background));
