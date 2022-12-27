@@ -4,6 +4,7 @@ import './style.scss'
 window.snowConfig = snowConfig
 
 const searchParams = new URLSearchParams(location.search)
+const snow = searchParams.get('snow')
 const color = searchParams.get('color')
 const duration = searchParams.get('duration') ?? '120'
 const size = searchParams.get('size') ?? '71'
@@ -75,6 +76,12 @@ class BackgroundController {
 const backgroundController = new BackgroundController()
 backgroundController.changeBackgroundDuration(duration)
 backgroundController.changeBackgroundCellSize(size)
+
+if (!snow) {
+  document.addEventListener('DOMContentLoaded', () => {
+    document.querySelector('canvas')?.remove()
+  })
+}
 
 if (color) {
   backgroundController.changeBackgroundColors()
