@@ -1,4 +1,4 @@
-# christmas-overlay ![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/crashmax-dev/dvd-screensaver-overlay/gh-pages.yml)
+# christmas-overlay ![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/crashmax-dev/christmas-overlay/gh-pages.yml)
 
 > https://crashmax-dev.github.io/christmas-overlay/?color=2&duration=100&size=71
 
